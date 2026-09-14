@@ -63,12 +63,12 @@ html body #the-ask#the-ask .kb-card{background:linear-gradient(145deg,rgba(13,25
 html body #evidence#evidence .receipt-heading>div{position:relative;padding:34px 36px!important;border-radius:18px;background:linear-gradient(100deg,rgba(3,10,15,.86),rgba(3,10,15,.5) 72%,rgba(3,10,15,.2));box-shadow:0 24px 70px rgba(0,0,0,.2);backdrop-filter:blur(4px)}
 html body #evidence#evidence .receipt-heading :is(h2,.receipt-intro){text-shadow:0 2px 22px rgba(0,0,0,.72)}
 html body #why#why{display:none!important}
-html body #architecture .tier-content{display:grid!important;grid-template-columns:minmax(0,1.02fr) minmax(280px,.98fr);grid-template-areas:'kicker visual' 'title visual' 'purpose visual' 'facts visual' 'position position';align-content:center;column-gap:clamp(32px,4vw,68px);min-height:580px!important}
+html body #architecture .tier-content{display:grid!important;grid-template-columns:minmax(0,1.3fr) minmax(250px,.7fr);grid-template-areas:'kicker visual' 'title visual' 'purpose visual' 'facts visual' 'position position';align-content:center;column-gap:clamp(28px,3.2vw,52px);min-height:580px!important}
 html body #architecture .tier-meta{display:none!important}
 html body #architecture .kt-tier-kicker{grid-area:kicker;align-self:end;margin:0 0 16px;color:var(--kt-violet)!important;font:600 12px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.16em;text-transform:uppercase}
 html body #architecture .tier-visual{grid-area:visual;align-self:stretch;min-height:360px;height:auto!important;margin:0!important}
-html body #architecture .tier-content>h3{grid-area:title;align-self:end;margin:0!important;color:var(--kt-ink)!important;font-size:clamp(34px,3.2vw,54px)!important;line-height:1.02!important}
-html body #architecture .tier-purpose{grid-area:purpose;margin:22px 0 0!important;color:#e8edf0!important;font-size:clamp(18px,1.55vw,24px)!important;line-height:1.45!important}
+html body #architecture .tier-content>h3{grid-area:title;align-self:end;max-width:100%!important;margin:0!important;color:var(--kt-ink)!important;font-size:clamp(30px,2.35vw,38px)!important;line-height:1.08!important;text-wrap:balance!important}
+html body #architecture .tier-purpose{grid-area:purpose;max-width:100%!important;margin:22px 0 0!important;color:#e8edf0!important;font-size:clamp(18px,1.3vw,20px)!important;line-height:1.5!important;text-wrap:balance!important}
 html body #architecture .tier-description{display:none!important}
 html body #architecture .kt-tier-facts{grid-area:facts;display:grid;gap:18px;margin-top:28px}
 html body #architecture .kt-tier-fact{padding-top:16px;border-top:1px solid rgba(177,215,225,.22)}
@@ -76,6 +76,8 @@ html body #architecture .kt-tier-label{display:block;margin-bottom:8px;color:var
 html body #architecture .kt-tier-fact p,html body #architecture .kt-tier-fact strong{display:block;margin:0;color:var(--kt-muted)!important;font-size:16px!important;line-height:1.55!important}
 html body #architecture .kt-tier-fact strong{color:var(--kt-ink)!important;font-weight:650!important}
 html body #architecture .tier-position{grid-area:position;margin-top:32px!important}
+html body #architecture .wf-panel-08 .memory-film-scene video{object-fit:contain!important;object-position:72% center!important;transform:scale(.6)!important;transform-origin:72% 50%!important}
+html body #architecture .wf-panel-04 .dragon-film{filter:brightness(1.4)!important}
 html body #architecture .kt-architecture-outro{position:relative;z-index:2;margin-top:0;padding:clamp(44px,6vw,82px) clamp(24px,5vw,72px);background:#071018!important;border-radius:0 0 18px 18px;box-shadow:0 30px 80px rgba(0,0,0,.38)}
 html body #architecture .kt-architecture-outro .architecture-closing{margin-top:0!important}
 html body #architecture .kt-architecture-outro .architecture-summary{margin-bottom:0!important}
@@ -150,6 +152,16 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
     if(thesisCopy)thesisCopy.textContent='As AI gains greater capability, autonomy, memory, tool access, and institutional responsibility, the infrastructure governing its execution must become equally capable. KrystBios brings permissions, memory, identity, oversight, and recovery into one runtime governance architecture.';
     const soulTitle=document.querySelector('#soul h2');
     if(soulTitle)soulTitle.textContent='What is the S.O.U.L of AI?';
+    const architectureLabel=[...document.querySelectorAll('#architecture .section-label')].find(label=>label.textContent.trim()==='Architecture');
+    if(architectureLabel)architectureLabel.remove();
+    const alignment=document.querySelector('#evidence .alignment');
+    const alignmentHeading=alignment?.querySelector('.alignment-heading');
+    if(alignmentHeading){
+      alignmentHeading.querySelector('.section-label')?.remove();
+      const alignmentCopy=alignmentHeading.querySelector('.muted');
+      if(alignmentCopy)alignmentCopy.textContent='Documented evidence connects governance, risk assessment, testing, and response to technical implementation. This alignment shows how the architecture addresses AI risks already recognized by serious organizations. This gives organizations a familiar framework for evaluating how KrystBios governs AI risk.';
+      [...alignment.children].forEach(child=>{if(child!==alignmentHeading&&!child.classList.contains('mapping'))child.remove()});
+    }
     const difference=document.getElementById('the-difference');
     if(difference){
       const inner=difference.querySelector('.kb-inner');
