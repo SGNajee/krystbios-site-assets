@@ -74,13 +74,19 @@ html body #architecture .kt-tier-label{display:block;margin-bottom:8px;color:var
 html body #architecture .kt-tier-fact p,html body #architecture .kt-tier-fact strong{display:block;margin:0;color:var(--kt-muted)!important;font-size:16px!important;line-height:1.55!important}
 html body #architecture .kt-tier-fact strong{color:var(--kt-ink)!important;font-weight:650!important}
 html body #architecture .tier-position{grid-area:position;margin-top:32px!important}
+html body #architecture .kt-architecture-outro{position:relative;z-index:2;margin-top:0;padding:clamp(44px,6vw,82px) clamp(24px,5vw,72px);background:#071018!important;border-radius:0 0 18px 18px;box-shadow:0 30px 80px rgba(0,0,0,.38)}
+html body #architecture .kt-architecture-outro .architecture-closing{margin-top:0!important}
+html body #architecture .kt-architecture-outro .architecture-summary{margin-bottom:0!important}
+html body #evidence .alignment-heading{position:relative;padding:36px!important;background:linear-gradient(145deg,rgba(18,31,40,.94),rgba(7,14,21,.97))!important;border:1px solid rgba(151,194,207,.42)!important;border-radius:18px!important;box-shadow:0 22px 70px rgba(0,0,0,.34)!important;backdrop-filter:blur(10px)}
+html body #evidence .alignment-heading h3{max-width:900px;margin-left:auto!important;margin-right:auto!important;color:var(--kt-ink)!important;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+html body #evidence .alignment-heading .muted{max-width:900px;margin-left:auto!important;margin-right:auto!important;color:#d2dae0!important}
 html body .kt-reveal{opacity:var(--kt-reveal,0)!important;transform:translate3d(0,var(--kt-reveal-y,34px),0)!important;will-change:transform,opacity}
 html body .kt-reveal.kt-readable{will-change:auto}
 html body #soul .kb-grid{perspective:1200px}
 html body #soul .kb-card.kt-reveal{transform:translate3d(0,var(--kt-reveal-y,34px),0) rotateX(var(--kt-tilt,5deg))!important;transform-origin:50% 100%}
 html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--kt-teal),var(--kt-violet),transparent);opacity:var(--kt-card-light,.3);box-shadow:0 0 18px rgba(141,226,232,.28)}
 @keyframes kt-grain{0%{transform:translate3d(-3%,-2%,0)}50%{transform:translate3d(3%,2%,0)}100%{transform:translate3d(-3%,-2%,0)}}
-@media(max-width:767px){.kt-machine-scene{inset:0;transform:scale(1.12)!important;background-position:center;will-change:opacity}.kt-machine-scene[data-scene="2"]{background-position:64% center}.kt-machine-scene[data-scene="3"]{background-position:66% center}.kt-machine-vignette{background:linear-gradient(180deg,rgba(4,10,16,.94),rgba(4,10,16,.58) 35%,rgba(4,10,16,.9))}.kt-machine-jamb,.kt-machine-rail,.kt-machine-status,.kt-machine-scan{display:none}html body .kt-tour-section::before{background:rgba(5,12,18,.79)!important}html body .kt-tour-section::after{height:78px}html body #what#what.kt-tour-section{padding-top:54px!important;padding-bottom:58px!important}html body .kt-tour-section :is(.kb-card,.receipt-card,.mapping-row,.receipt-scope,.kp-demo,.kp-path){backdrop-filter:none}html body #evidence#evidence .receipt-heading>div{padding:26px 22px!important;background:rgba(3,10,15,.7);backdrop-filter:none}html body #architecture .tier-content{display:flex!important;min-height:0!important}html body #architecture .tier-visual{display:none!important}html body #architecture .kt-tier-kicker{margin-bottom:12px}html body #architecture .tier-content>h3{font-size:34px!important}html body #architecture .tier-purpose{margin-top:16px!important}html body #architecture .kt-tier-facts{margin-top:24px}html body #architecture .tier-position{margin-top:28px!important}}
+@media(max-width:767px){.kt-machine-scene{inset:0;transform:scale(1.12)!important;background-position:center;will-change:opacity}.kt-machine-scene[data-scene="2"]{background-position:64% center}.kt-machine-scene[data-scene="3"]{background-position:66% center}.kt-machine-vignette{background:linear-gradient(180deg,rgba(4,10,16,.94),rgba(4,10,16,.58) 35%,rgba(4,10,16,.9))}.kt-machine-jamb,.kt-machine-rail,.kt-machine-status,.kt-machine-scan{display:none}html body .kt-tour-section::before{background:rgba(5,12,18,.79)!important}html body .kt-tour-section::after{height:78px}html body #what#what.kt-tour-section{padding-top:54px!important;padding-bottom:58px!important}html body .kt-tour-section :is(.kb-card,.receipt-card,.mapping-row,.receipt-scope,.kp-demo,.kp-path){backdrop-filter:none}html body #evidence#evidence .receipt-heading>div{padding:26px 22px!important;background:rgba(3,10,15,.7);backdrop-filter:none}html body #architecture .tier-content{display:flex!important;min-height:0!important}html body #architecture .tier-visual{display:none!important}html body #architecture .kt-tier-kicker{margin-bottom:12px}html body #architecture .tier-content>h3{font-size:34px!important}html body #architecture .tier-purpose{margin-top:16px!important}html body #architecture .kt-tier-facts{margin-top:24px}html body #architecture .tier-position{margin-top:28px!important}html body #architecture .kt-architecture-outro{padding:38px 22px}html body #evidence .alignment-heading{padding:26px 22px!important;backdrop-filter:none}}
 @media(prefers-reduced-motion:reduce){.kt-machine-grain{animation:none!important}.kt-machine-scene{transform:scale(1.06)!important;will-change:auto}.kt-machine-scan,.kt-machine-jamb{transform:none!important}.kt-machine-rail span{transition:none!important}html body .kt-reveal,html body #soul .kb-card.kt-reveal{opacity:1!important;transform:none!important;will-change:auto}}
 @media print{.kt-machine-env{display:none!important}html body .kt-tour-section{background:#fff!important;color:#111!important}html body .kt-reveal{opacity:1!important;transform:none!important}}
 `;document.head.append(style)})();
@@ -120,6 +126,14 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
       facts.innerHTML=`<div class="kt-tier-fact"><span class="kt-tier-label">What it does</span><p>${tierDetails[index][1]}</p></div><div class="kt-tier-fact"><span class="kt-tier-label">Problem it solves</span><strong>${tierDetails[index][0]}</strong></div>`;
       purpose.after(facts);
     });
+    const architectureClosing=document.querySelector('#architecture .architecture-closing');
+    const architectureSummary=document.querySelector('#architecture .architecture-summary');
+    if(architectureClosing&&architectureSummary&&!architectureClosing.parentElement?.classList.contains('kt-architecture-outro')){
+      const outro=document.createElement('div');
+      outro.className='kt-architecture-outro';
+      architectureClosing.before(outro);
+      outro.append(architectureClosing,architectureSummary);
+    }
     const sectionIds=['pitch-intro','what','soul','why-it-matters','why-now','the-difference','evidence','strategic-licensing','the-ask','kb-contact'];
     const sections=sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
     const thesisCopy=document.querySelector('#pitch-intro .kb-lead');
