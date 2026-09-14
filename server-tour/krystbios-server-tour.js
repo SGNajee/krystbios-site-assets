@@ -51,6 +51,8 @@ html body :is(#why-now#why-now,#why#why,#the-ask#the-ask).kt-tour-section a:not(
 html body #why-now#why-now .kb-grid{gap:22px!important}
 html body #why-now#why-now .kb-card{background:linear-gradient(145deg,rgba(13,25,34,.92),rgba(5,12,18,.94))!important;border:1px solid rgba(166,207,218,.2)!important;border-radius:16px!important;padding:30px!important;box-shadow:0 24px 60px rgba(0,0,0,.2)!important}
 html body #the-difference#the-difference .kb-grid{gap:18px!important;border:0!important}
+html body #the-difference#the-difference .kb-inner>h2{max-width:none!important;margin:0 auto 36px!important;text-align:center!important}
+html body #the-difference#the-difference .kt-difference-summary{max-width:980px!important;margin:38px auto 0!important;color:#d2dae0!important;font-size:clamp(17px,1.35vw,20px)!important;line-height:1.7!important;text-align:center!important;text-wrap:balance}
 html body #the-difference#the-difference .kb-card{background:linear-gradient(145deg,rgba(13,25,34,.9),rgba(5,12,18,.94))!important;border:1px solid rgba(166,207,218,.18)!important;border-radius:15px!important;padding:30px!important}
 html body #the-difference#the-difference .kb-card:last-child{background:linear-gradient(145deg,rgba(28,34,46,.94),rgba(10,17,25,.96))!important;border-color:rgba(198,169,223,.3)!important}
 html body #why#why .kb-list{display:grid!important;gap:10px!important}
@@ -148,6 +150,20 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
     if(thesisCopy)thesisCopy.textContent='As AI gains greater capability, autonomy, memory, tool access, and institutional responsibility, the infrastructure governing its execution must become equally capable. KrystBios brings permissions, memory, identity, oversight, and recovery into one runtime governance architecture.';
     const soulTitle=document.querySelector('#soul h2');
     if(soulTitle)soulTitle.textContent='What is the S.O.U.L of AI?';
+    const difference=document.getElementById('the-difference');
+    if(difference){
+      const inner=difference.querySelector('.kb-inner');
+      const title=inner?.querySelector('h2');
+      const grid=inner?.querySelector('.kb-grid');
+      if(inner&&title&&grid){
+        [...inner.children].forEach(child=>{if(child!==title&&child!==grid)child.remove()});
+        title.textContent='Critical Control AI Infrastructure.';
+        const summary=document.createElement('p');
+        summary.className='kt-difference-summary';
+        summary.textContent='KrystBios is a Runtime Governance Layer, positioned as Critical Control AI Infrastructure. SaaS describes how software is delivered. KrystBios’s positioning describes its role: governing AI while it operates. Most AI controls inspect one moment. KrystBios governs the full operating lifecycle, from startup verification and runtime decisions to enforcement, recovery, and evidence.';
+        grid.after(summary);
+      }
+    }
     sections.forEach(section=>{section.classList.add('kt-tour-section');if(section.parentElement?.classList.contains('section-band'))section.parentElement.classList.add('kt-section-band')});
     const environment=document.createElement('div');
     environment.className='kt-machine-env';
