@@ -50,9 +50,10 @@ html body :is(#why-now#why-now,#why#why,#the-ask#the-ask).kt-tour-section :is(p,
 html body :is(#why-now#why-now,#why#why,#the-ask#the-ask).kt-tour-section a:not(.kp-button){color:#dec7ef!important;text-decoration-color:rgba(222,199,239,.64)!important}
 html body #why-now#why-now .kb-grid{gap:22px!important}
 html body #why-now#why-now .kb-card{background:linear-gradient(145deg,rgba(13,25,34,.92),rgba(5,12,18,.94))!important;border:1px solid rgba(166,207,218,.2)!important;border-radius:16px!important;padding:30px!important;box-shadow:0 24px 60px rgba(0,0,0,.2)!important}
+html body #the-difference#the-difference .kb-inner{display:block!important}
 html body #the-difference#the-difference .kb-grid{gap:18px!important;border:0!important}
-html body #the-difference#the-difference .kb-inner>h2{max-width:none!important;margin:0 auto 36px!important;text-align:center!important}
-html body #the-difference#the-difference .kt-difference-summary{max-width:980px!important;margin:38px auto 0!important;color:#d2dae0!important;font-size:clamp(17px,1.35vw,20px)!important;line-height:1.7!important;text-align:center!important;text-wrap:balance}
+html body #the-difference#the-difference .kb-inner>h2{width:100%!important;max-width:none!important;margin:0 auto 36px!important;text-align:center!important}
+html body #the-difference#the-difference .kt-difference-summary{width:100%!important;max-width:900px!important;margin:38px auto 0!important;color:#b8c2ca!important;font-size:18px!important;line-height:1.75!important;text-align:center!important;text-wrap:balance!important}
 html body #the-difference#the-difference .kb-card{background:linear-gradient(145deg,rgba(13,25,34,.9),rgba(5,12,18,.94))!important;border:1px solid rgba(166,207,218,.18)!important;border-radius:15px!important;padding:30px!important}
 html body #the-difference#the-difference .kb-card:last-child{background:linear-gradient(145deg,rgba(28,34,46,.94),rgba(10,17,25,.96))!important;border-color:rgba(198,169,223,.3)!important}
 html body #why#why .kb-list{display:grid!important;gap:10px!important}
@@ -76,8 +77,10 @@ html body #architecture .kt-tier-label{display:block;margin-bottom:8px;color:var
 html body #architecture .kt-tier-fact p,html body #architecture .kt-tier-fact strong{display:block;margin:0;color:var(--kt-muted)!important;font-size:16px!important;line-height:1.55!important}
 html body #architecture .kt-tier-fact strong{color:var(--kt-ink)!important;font-weight:650!important}
 html body #architecture .tier-position{grid-area:position;margin-top:32px!important}
-html body #architecture .wf-panel-08 .memory-film-scene video{object-fit:contain!important;object-position:72% center!important;transform:scale(.6)!important;transform-origin:72% 50%!important}
+html body #architecture .wf-panel-08 .memory-film-scene video{object-fit:contain!important;object-position:72% center!important;transform:scale(.72)!important;transform-origin:72% 50%!important}
+html body #architecture .wf-panel-01 .dragon-film{transform:scale(.9)!important;transform-origin:right center!important}
 html body #architecture .wf-panel-04 .dragon-film{filter:brightness(1.4)!important}
+html body #architecture .wf-panel-04 .dragon-film-shade{display:none!important}
 html body #architecture .kt-architecture-outro{position:relative;z-index:2;margin-top:0;padding:clamp(44px,6vw,82px) clamp(24px,5vw,72px);background:#071018!important;border-radius:0 0 18px 18px;box-shadow:0 30px 80px rgba(0,0,0,.38)}
 html body #architecture .kt-architecture-outro .architecture-closing{margin-top:0!important}
 html body #architecture .kt-architecture-outro .architecture-summary{margin-bottom:0!important}
@@ -173,6 +176,8 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
         const summary=document.createElement('p');
         summary.className='kt-difference-summary';
         summary.textContent='KrystBios is a Runtime Governance Layer, positioned as Critical Control AI Infrastructure. SaaS describes how software is delivered. KrystBios’s positioning describes its role: governing AI while it operates. Most AI controls inspect one moment. KrystBios governs the full operating lifecycle, from startup verification and runtime decisions to enforcement, recovery, and evidence.';
+        title.style.cssText='width:100%;max-width:none;margin:0 auto 36px;text-align:center';
+        summary.style.cssText='width:100%;max-width:900px;margin:38px auto 0;color:#b8c2ca;font-size:18px;line-height:1.75;text-align:center;text-wrap:balance';
         grid.after(summary);
       }
     }
