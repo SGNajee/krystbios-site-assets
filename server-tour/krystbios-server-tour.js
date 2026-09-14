@@ -1,4 +1,5 @@
-(()=>{const style=document.createElement('style');style.dataset.krystbiosServerTour='';style.textContent=String.raw`:root{--kt-canvas:#071018;--kt-ink:#f3f6f8;--kt-muted:#b8c2ca;--kt-line:rgba(164,207,220,.24);--kt-teal:#8de2e8;--kt-violet:#c6a9df}
+(()=>{const style=document.createElement('style');style.dataset.krystbiosServerTour='';style.textContent=String.raw`
+:root{--kt-canvas:#071018;--kt-ink:#f3f6f8;--kt-muted:#b8c2ca;--kt-line:rgba(164,207,220,.24);--kt-teal:#8de2e8;--kt-violet:#c6a9df}
 html,body{overflow-x:hidden;overflow-x:clip}
 body.kt-tour-ready{background:var(--kt-canvas)}
 .kt-machine-env{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:var(--kt-canvas);opacity:1;contain:paint}
@@ -59,20 +60,67 @@ html body #the-ask#the-ask .kb-grid{gap:20px!important}
 html body #the-ask#the-ask .kb-card{background:linear-gradient(145deg,rgba(13,25,34,.93),rgba(5,12,18,.95))!important;border:1px solid rgba(166,207,218,.2)!important;border-radius:16px!important;padding:30px!important;box-shadow:0 24px 60px rgba(0,0,0,.2)!important}
 html body #evidence#evidence .receipt-heading>div{position:relative;padding:34px 36px!important;border-radius:18px;background:linear-gradient(100deg,rgba(3,10,15,.86),rgba(3,10,15,.5) 72%,rgba(3,10,15,.2));box-shadow:0 24px 70px rgba(0,0,0,.2);backdrop-filter:blur(4px)}
 html body #evidence#evidence .receipt-heading :is(h2,.receipt-intro){text-shadow:0 2px 22px rgba(0,0,0,.72)}
+html body #why#why{display:none!important}
+html body #architecture .tier-content{display:grid!important;grid-template-columns:minmax(0,1.02fr) minmax(280px,.98fr);grid-template-areas:'kicker visual' 'title visual' 'purpose visual' 'facts visual' 'position position';align-content:center;column-gap:clamp(32px,4vw,68px);min-height:580px!important}
+html body #architecture .tier-meta{display:none!important}
+html body #architecture .kt-tier-kicker{grid-area:kicker;align-self:end;margin:0 0 16px;color:var(--kt-violet)!important;font:600 12px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.16em;text-transform:uppercase}
+html body #architecture .tier-visual{grid-area:visual;align-self:stretch;min-height:360px;height:auto!important;margin:0!important}
+html body #architecture .tier-content>h3{grid-area:title;align-self:end;margin:0!important;color:var(--kt-ink)!important;font-size:clamp(34px,3.2vw,54px)!important;line-height:1.02!important}
+html body #architecture .tier-purpose{grid-area:purpose;margin:22px 0 0!important;color:#e8edf0!important;font-size:clamp(18px,1.55vw,24px)!important;line-height:1.45!important}
+html body #architecture .tier-description{display:none!important}
+html body #architecture .kt-tier-facts{grid-area:facts;display:grid;gap:18px;margin-top:28px}
+html body #architecture .kt-tier-fact{padding-top:16px;border-top:1px solid rgba(177,215,225,.22)}
+html body #architecture .kt-tier-label{display:block;margin-bottom:8px;color:var(--kt-violet)!important;font:600 11px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase}
+html body #architecture .kt-tier-fact p,html body #architecture .kt-tier-fact strong{display:block;margin:0;color:var(--kt-muted)!important;font-size:16px!important;line-height:1.55!important}
+html body #architecture .kt-tier-fact strong{color:var(--kt-ink)!important;font-weight:650!important}
+html body #architecture .tier-position{grid-area:position;margin-top:32px!important}
 html body .kt-reveal{opacity:var(--kt-reveal,0)!important;transform:translate3d(0,var(--kt-reveal-y,34px),0)!important;will-change:transform,opacity}
 html body .kt-reveal.kt-readable{will-change:auto}
 html body #soul .kb-grid{perspective:1200px}
 html body #soul .kb-card.kt-reveal{transform:translate3d(0,var(--kt-reveal-y,34px),0) rotateX(var(--kt-tilt,5deg))!important;transform-origin:50% 100%}
 html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--kt-teal),var(--kt-violet),transparent);opacity:var(--kt-card-light,.3);box-shadow:0 0 18px rgba(141,226,232,.28)}
 @keyframes kt-grain{0%{transform:translate3d(-3%,-2%,0)}50%{transform:translate3d(3%,2%,0)}100%{transform:translate3d(-3%,-2%,0)}}
-@media(max-width:767px){.kt-machine-scene{inset:0;transform:scale(1.12)!important;background-position:center;will-change:opacity}.kt-machine-scene[data-scene="2"]{background-position:64% center}.kt-machine-scene[data-scene="3"]{background-position:66% center}.kt-machine-vignette{background:linear-gradient(180deg,rgba(4,10,16,.94),rgba(4,10,16,.58) 35%,rgba(4,10,16,.9))}.kt-machine-jamb,.kt-machine-rail,.kt-machine-status,.kt-machine-scan{display:none}html body .kt-tour-section::before{background:rgba(5,12,18,.79)!important}html body .kt-tour-section::after{height:78px}html body #what#what.kt-tour-section{padding-top:54px!important;padding-bottom:58px!important}html body .kt-tour-section :is(.kb-card,.receipt-card,.mapping-row,.receipt-scope,.kp-demo,.kp-path){backdrop-filter:none}html body #evidence#evidence .receipt-heading>div{padding:26px 22px!important;background:rgba(3,10,15,.7);backdrop-filter:none}html body #why#why .kb-list-row{padding:18px!important}}
+@media(max-width:767px){.kt-machine-scene{inset:0;transform:scale(1.12)!important;background-position:center;will-change:opacity}.kt-machine-scene[data-scene="2"]{background-position:64% center}.kt-machine-scene[data-scene="3"]{background-position:66% center}.kt-machine-vignette{background:linear-gradient(180deg,rgba(4,10,16,.94),rgba(4,10,16,.58) 35%,rgba(4,10,16,.9))}.kt-machine-jamb,.kt-machine-rail,.kt-machine-status,.kt-machine-scan{display:none}html body .kt-tour-section::before{background:rgba(5,12,18,.79)!important}html body .kt-tour-section::after{height:78px}html body #what#what.kt-tour-section{padding-top:54px!important;padding-bottom:58px!important}html body .kt-tour-section :is(.kb-card,.receipt-card,.mapping-row,.receipt-scope,.kp-demo,.kp-path){backdrop-filter:none}html body #evidence#evidence .receipt-heading>div{padding:26px 22px!important;background:rgba(3,10,15,.7);backdrop-filter:none}html body #architecture .tier-content{display:flex!important;min-height:0!important}html body #architecture .tier-visual{display:none!important}html body #architecture .kt-tier-kicker{margin-bottom:12px}html body #architecture .tier-content>h3{font-size:34px!important}html body #architecture .tier-purpose{margin-top:16px!important}html body #architecture .kt-tier-facts{margin-top:24px}html body #architecture .tier-position{margin-top:28px!important}}
 @media(prefers-reduced-motion:reduce){.kt-machine-grain{animation:none!important}.kt-machine-scene{transform:scale(1.06)!important;will-change:auto}.kt-machine-scan,.kt-machine-jamb{transform:none!important}.kt-machine-rail span{transition:none!important}html body .kt-reveal,html body #soul .kb-card.kt-reveal{opacity:1!important;transform:none!important;will-change:auto}}
-@media print{.kt-machine-env{display:none!important}html body .kt-tour-section{background:#fff!important;color:#111!important}html body .kt-reveal{opacity:1!important;transform:none!important}}`;document.head.append(style)})();
+@media print{.kt-machine-env{display:none!important}html body .kt-tour-section{background:#fff!important;color:#111!important}html body .kt-reveal{opacity:1!important;transform:none!important}}
+`;document.head.append(style)})();
+
 (()=>{
   function init(){
     if(document.querySelector('.kt-machine-env'))return true;
     if(!document.documentElement.dataset.kpPremium||!document.querySelector('#what .kp-demo')||!document.querySelector('#evidence .receipt-grid'))return false;
-    const sectionIds=['pitch-intro','what','soul','why-it-matters','why-now','the-difference','why','evidence','strategic-licensing','the-ask','kb-contact'];
+    const tierDetails=[
+      ['Untrusted startup','Verifies identity, configuration, components, and governing policies before execution.'],
+      ['Signal drift','Detects conflicting, repetitive, or unstable input patterns.'],
+      ['Execution instability','Keeps timing and system processes coordinated.'],
+      ['Fragmented intelligence','Unifies context, goals, reasoning, and decision-making.'],
+      ['Uncontrolled actions','Keeps workflows inside approved permissions and boundaries.'],
+      ['Compounding errors','Detects contradictions and interrupts runaway reasoning loops.'],
+      ['Identity drift','Maintains consistent identity, behavior, and response governance.'],
+      ['Uncorrected failures','Connects detection to controlled intervention and recovery.'],
+      ['Memory breakdown','Preserves context, provenance, and governed memory continuity.'],
+      ['Policy violations','Evaluates decisions against defined rules before authorization.'],
+      ['Unsafe behavior','Enforces restrictions, containment, and evidence-based release.'],
+      ['Compromised operation','Locks down unsafe states and coordinates trusted restoration.']
+    ];
+    const bridge=document.getElementById('why');
+    if(bridge){const band=bridge.parentElement;bridge.remove();if(band?.classList.contains('section-band')&&!band.children.length)band.remove()}
+    document.querySelectorAll('#architecture .tier-panel').forEach((panel,index)=>{
+      if(panel.querySelector('.kt-tier-facts')||!tierDetails[index])return;
+      const content=panel.querySelector('.tier-content');
+      const title=content?.querySelector('h3');
+      const purpose=content?.querySelector('.tier-purpose');
+      if(!content||!title||!purpose)return;
+      const kicker=document.createElement('p');
+      kicker.className='kt-tier-kicker';
+      kicker.textContent=`Tier ${String(index).padStart(2,'0')}`;
+      title.before(kicker);
+      const facts=document.createElement('div');
+      facts.className='kt-tier-facts';
+      facts.innerHTML=`<div class="kt-tier-fact"><span class="kt-tier-label">What it does</span><p>${tierDetails[index][1]}</p></div><div class="kt-tier-fact"><span class="kt-tier-label">Problem it solves</span><strong>${tierDetails[index][0]}</strong></div>`;
+      purpose.after(facts);
+    });
+    const sectionIds=['pitch-intro','what','soul','why-it-matters','why-now','the-difference','evidence','strategic-licensing','the-ask','kb-contact'];
     const sections=sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
     const soulTitle=document.querySelector('#soul h2');
     if(soulTitle)soulTitle.textContent='What is the S.O.U.L of AI?';
