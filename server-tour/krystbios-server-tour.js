@@ -76,6 +76,9 @@ html body #architecture .kt-tier-fact{padding-top:16px;border-top:1px solid rgba
 html body #architecture .kt-tier-label{display:block;margin-bottom:8px;color:var(--kt-violet)!important;font:600 11px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase}
 html body #architecture .kt-tier-fact p,html body #architecture .kt-tier-fact strong{display:block;margin:0;color:var(--kt-muted)!important;font-size:16px!important;line-height:1.55!important}
 html body #architecture .kt-tier-fact strong{color:var(--kt-ink)!important;font-weight:650!important}
+html body #architecture .kt-tier-concerns{display:grid;gap:5px;margin:0;padding:0;list-style:none}
+html body #architecture .kt-tier-concerns li{position:relative;margin:0;padding-left:15px;color:var(--kt-ink)!important;font-size:14px!important;line-height:1.4!important}
+html body #architecture .kt-tier-concerns li::before{content:'';position:absolute;left:0;top:.58em;width:5px;height:5px;border-radius:50%;background:var(--kt-violet);box-shadow:0 0 9px rgba(198,169,223,.38)}
 html body #architecture .tier-position{grid-area:position;margin-top:32px!important}
 html body #architecture .wf-panel-08 .memory-film-scene video{object-fit:contain!important;object-position:72% center!important;transform:scale(.72)!important;transform-origin:72% 50%!important}
 html body #architecture .wf-panel-01 .dragon-film{transform:scale(.9)!important;transform-origin:right center!important}
@@ -103,18 +106,18 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
     if(document.querySelector('.kt-machine-env'))return true;
     if(!document.documentElement.dataset.kpPremium||!document.querySelector('#what .kp-demo')||!document.querySelector('#evidence .receipt-grid'))return false;
     const tierDetails=[
-      ['Untrusted startup','Verifies identity, configuration, components, and governing policies before execution.'],
-      ['Signal drift','Detects conflicting, repetitive, or unstable input patterns.'],
-      ['Execution instability','Keeps timing and system processes coordinated.'],
-      ['Fragmented intelligence','Unifies context, goals, reasoning, and decision-making.'],
-      ['Uncontrolled actions','Keeps workflows inside approved permissions and boundaries.'],
-      ['Compounding errors','Detects contradictions and interrupts runaway reasoning loops.'],
-      ['Identity drift','Maintains consistent identity, behavior, and response governance.'],
-      ['Uncorrected failures','Connects detection to controlled intervention and recovery.'],
-      ['Memory breakdown','Preserves context, provenance, and governed memory continuity.'],
-      ['Policy violations','Evaluates decisions against defined rules before authorization.'],
-      ['Unsafe behavior','Enforces restrictions, containment, and evidence-based release.'],
-      ['Compromised operation','Locks down unsafe states and coordinates trusted restoration.']
+      ['Verifies identity, configuration, components, and governing policies before execution.',['Unverified identity or components','Unsigned or altered governing policy','Incomplete or unsafe startup sequences']],
+      ['Detects conflicting, repetitive, or unstable input patterns.',['Conflicting input signals','Repetitive or unstable language patterns','Lost symbolic or contextual continuity']],
+      ['Keeps timing and system processes coordinated.',['Timing and phase drift','Unbounded recursive cycles','Operating-state threshold breaches']],
+      ['Unifies context, goals, reasoning, and decision-making.',['Fragmented context and goals','Contradictory reasoning signals','Uncoordinated decisions across tiers']],
+      ['Keeps movement within approved permissions and constraints.',['Unauthorized state transitions','Constraint-breaking routes','Untraceable goal execution']],
+      ['Detects contradictions and interrupts runaway reasoning loops.',['Runaway reasoning loops','Contradictory interpretations','Lost reasoning provenance']],
+      ['Maintains consistent identity, behavior, and response governance.',['Persona and identity drift','Inconsistent behavioral policy','Uncontrolled adaptation across interactions']],
+      ['Connects detection to controlled intervention and recovery.',['Undetected hostile or unsafe input','Disconnected risk signals','Failures without explainable repair paths']],
+      ['Preserves context, provenance, and governed memory continuity.',['Unsupported memory becoming authoritative','Lost provenance or context','Retrieval outside retention policy']],
+      ['Evaluates decisions against defined rules before authorization.',['Policy violations before execution','Unsigned or outdated rule sets','Decisions without traceable verdicts']],
+      ['Enforces restrictions, containment, and evidence-based release.',['Governance verdicts not enforced','Unsafe states escaping containment','Release without evidence or renewed authority']],
+      ['Locks down unsafe states and coordinates trusted restoration.',['Compromised runtime integrity','Drift from a trusted baseline','Unsafe restoration or reopening']]
     ];
     const bridge=document.getElementById('why');
     if(bridge){const band=bridge.parentElement;bridge.remove();if(band?.classList.contains('section-band')&&!band.children.length)band.remove()}
@@ -124,14 +127,16 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
       const title=content?.querySelector('h3');
       const purpose=content?.querySelector('.tier-purpose');
       if(!content||!title||!purpose)return;
+      if(index===4)purpose.textContent='Gives intelligence a map and an authorized way to move through it.';
       const kicker=document.createElement('p');
       kicker.className='kt-tier-kicker';
       kicker.textContent=`Tier ${String(index).padStart(2,'0')}`;
       title.before(kicker);
       const facts=document.createElement('div');
       facts.className='kt-tier-facts';
-      facts.innerHTML=`<div class="kt-tier-fact"><span class="kt-tier-label">What it does</span><p>${tierDetails[index][1]}</p></div><div class="kt-tier-fact"><span class="kt-tier-label">Problem it solves</span><strong>${tierDetails[index][0]}</strong></div>`;
+      facts.innerHTML=`<div class="kt-tier-fact"><span class="kt-tier-label">What it does</span><p>${tierDetails[index][0]}</p></div><div class="kt-tier-fact"><span class="kt-tier-label">Key concerns addressed</span><ul class="kt-tier-concerns">${tierDetails[index][1].map(concern=>`<li>${concern}</li>`).join('')}</ul></div>`;
       purpose.after(facts);
+      [...panel.querySelectorAll('*')].filter(element=>element.textContent.trim()==='One governed intelligence').forEach(element=>element.remove());
     });
     const architectureClosing=document.querySelector('#architecture .architecture-closing');
     const architectureSummary=document.querySelector('#architecture .architecture-summary');
