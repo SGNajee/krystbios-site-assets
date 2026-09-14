@@ -134,7 +134,15 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
       architectureClosing.before(outro);
       outro.append(architectureClosing,architectureSummary);
     }
-    const sectionIds=['pitch-intro','what','soul','why-it-matters','why-now','the-difference','evidence','strategic-licensing','the-ask','kb-contact'];
+    ['strategic-licensing','the-ask'].forEach(id=>{
+      const section=document.getElementById(id);
+      if(!section)return;
+      const band=section.parentElement;
+      section.remove();
+      if(band?.classList.contains('section-band')&&!band.children.length)band.remove();
+    });
+    document.querySelectorAll('a[href="#strategic-licensing"],a[href="#the-ask"]').forEach(link=>link.remove());
+    const sectionIds=['pitch-intro','what','soul','why-it-matters','why-now','the-difference','evidence','kb-contact'];
     const sections=sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
     const thesisCopy=document.querySelector('#pitch-intro .kb-lead');
     if(thesisCopy)thesisCopy.textContent='As AI gains greater capability, autonomy, memory, tool access, and institutional responsibility, the infrastructure governing its execution must become equally capable. KrystBios brings permissions, memory, identity, oversight, and recovery into one runtime governance architecture.';
