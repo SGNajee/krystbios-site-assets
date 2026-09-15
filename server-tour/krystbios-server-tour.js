@@ -44,6 +44,7 @@ html body .kt-section-band{background:transparent!important;position:relative;z-
 html body :is(#pitch-intro#pitch-intro,#what#what,#soul#soul,#why-it-matters#why-it-matters,#why-now#why-now,#the-difference#the-difference,#why#why,#evidence#evidence,#strategic-licensing#strategic-licensing,#the-ask#the-ask,#kb-contact#kb-contact).kt-tour-section{border:0!important;box-shadow:none!important}
 html body .kt-machine-scan,html body #why-it-matters .kw-paths{display:none!important}
 html body #pitch-intro#pitch-intro .kb-statement{border-top:0!important;padding-top:0!important;margin-top:32px!important}
+html body #pitch-intro#pitch-intro .kt-thesis-statement{max-width:920px;margin:22px auto 0;color:#e8edf0!important;font-size:clamp(24px,3vw,42px)!important;font-weight:650;line-height:1.15;text-align:center;text-wrap:balance}
 html body #what#what.kt-tour-section{padding-top:72px!important;padding-bottom:76px!important}
 html body :is(#why-now#why-now,#why#why,#the-ask#the-ask).kt-tour-section :is(h2,h3,h4,strong){color:#f3f6f8!important;text-shadow:0 2px 22px rgba(0,0,0,.52)}
 html body :is(#why-now#why-now,#why#why,#the-ask#the-ask).kt-tour-section :is(p,li,.kb-lead,.kb-quote,.kb-list-row span){color:#d2dae0!important}
@@ -156,6 +157,16 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
     document.querySelectorAll('a[href="#strategic-licensing"],a[href="#the-ask"]').forEach(link=>link.remove());
     const sectionIds=['pitch-intro','what','soul','why-it-matters','why-now','the-difference','evidence','kb-contact'];
     const sections=sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
+    const thesisSection=document.getElementById('pitch-intro');
+    const thesisTitle=thesisSection?.querySelector('h2');
+    thesisSection?.querySelector('.kb-label')?.remove();
+    if(thesisTitle){
+      thesisTitle.textContent='The KrystBios Thesis';
+      const statement=document.createElement('p');
+      statement.className='kt-thesis-statement';
+      statement.textContent='The next generation of intelligence needs governance.';
+      thesisTitle.after(statement);
+    }
     const thesisCopy=document.querySelector('#pitch-intro .kb-lead');
     if(thesisCopy)thesisCopy.textContent='As AI gains greater capability, autonomy, memory, tool access, and institutional responsibility, the infrastructure governing its execution must become equally capable. KrystBios brings permissions, memory, identity, oversight, and recovery into one runtime governance architecture.';
     const soulTitle=document.querySelector('#soul h2');
