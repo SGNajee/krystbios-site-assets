@@ -64,6 +64,14 @@ html body #the-ask#the-ask .kb-grid{gap:20px!important}
 html body #the-ask#the-ask .kb-card{background:linear-gradient(145deg,rgba(13,25,34,.93),rgba(5,12,18,.95))!important;border:1px solid rgba(166,207,218,.2)!important;border-radius:16px!important;padding:30px!important;box-shadow:0 24px 60px rgba(0,0,0,.2)!important}
 html body #evidence#evidence .receipt-heading>div{position:relative;padding:34px 36px!important;border-radius:18px;background:linear-gradient(100deg,rgba(3,10,15,.86),rgba(3,10,15,.5) 72%,rgba(3,10,15,.2));box-shadow:0 24px 70px rgba(0,0,0,.2);backdrop-filter:blur(4px)}
 html body #evidence#evidence .receipt-heading :is(h2,.receipt-intro){text-shadow:0 2px 22px rgba(0,0,0,.72)}
+html body #evidence#evidence .receipt-grid.kt-receipt-carousel{display:block!important;max-width:820px;margin-left:auto!important;margin-right:auto!important}
+html body #evidence#evidence .receipt-grid.kt-receipt-carousel>.receipt-card{display:none!important;min-height:420px!important;margin:0!important;padding:clamp(28px,4vw,48px)!important}
+html body #evidence#evidence .receipt-grid.kt-receipt-carousel>.receipt-card.kt-receipt-active{display:block!important}
+html body #evidence#evidence .kt-receipt-controls{display:flex;align-items:center;justify-content:center;gap:18px;max-width:820px;margin:24px auto 0}
+html body #evidence#evidence .kt-receipt-button{min-width:118px;padding:12px 20px;border:1px solid rgba(198,169,223,.45);border-radius:999px;background:rgba(8,17,25,.88);color:var(--kt-ink);font:inherit;font-size:14px;font-weight:600;line-height:1.2;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+html body #evidence#evidence .kt-receipt-button:hover{background:rgba(198,169,223,.16);border-color:rgba(198,169,223,.78);transform:translateY(-1px)}
+html body #evidence#evidence .kt-receipt-button:focus-visible{outline:2px solid var(--kt-teal);outline-offset:3px}
+html body #evidence#evidence .kt-receipt-count{min-width:64px;color:var(--kt-muted);font:600 12px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.12em;text-align:center}
 html body #why#why{display:none!important}
 html body #architecture .tier-content{display:grid!important;grid-template-columns:minmax(0,1.3fr) minmax(250px,.7fr);grid-template-areas:'kicker visual' 'title visual' 'purpose visual' 'facts visual' 'position position';align-content:center;column-gap:clamp(28px,3.2vw,52px);min-height:580px!important}
 html body #architecture .tier-meta{display:none!important}
@@ -85,9 +93,6 @@ html body #architecture .wf-panel-08 .memory-film-scene video{object-fit:contain
 html body #architecture .wf-panel-01 .dragon-film{transform:scale(.9)!important;transform-origin:right center!important}
 html body #architecture .wf-panel-04 .dragon-film{filter:brightness(1.4)!important}
 html body #architecture .wf-panel-04 .dragon-film-shade{display:none!important}
-html body #architecture .kt-architecture-outro{position:relative;z-index:2;margin-top:0;padding:clamp(44px,6vw,82px) clamp(24px,5vw,72px);background:#071018!important;border-radius:0 0 18px 18px;box-shadow:0 30px 80px rgba(0,0,0,.38)}
-html body #architecture .kt-architecture-outro .architecture-closing{margin-top:0!important}
-html body #architecture .kt-architecture-outro .architecture-summary{margin-bottom:0!important}
 html body #evidence .alignment-heading{position:relative;padding:36px!important;background:linear-gradient(145deg,rgba(18,31,40,.94),rgba(7,14,21,.97))!important;border:1px solid rgba(151,194,207,.42)!important;border-radius:18px!important;box-shadow:0 22px 70px rgba(0,0,0,.34)!important;backdrop-filter:blur(10px)}
 html body #evidence .alignment-heading h3{max-width:900px;margin-left:auto!important;margin-right:auto!important;color:var(--kt-ink)!important;text-shadow:0 2px 20px rgba(0,0,0,.5)}
 html body #evidence .alignment-heading .muted{max-width:900px;margin-left:auto!important;margin-right:auto!important;color:#d2dae0!important}
@@ -97,7 +102,7 @@ html body #soul .kb-grid{perspective:1200px}
 html body #soul .kb-card.kt-reveal{transform:translate3d(0,var(--kt-reveal-y,34px),0) rotateX(var(--kt-tilt,5deg))!important;transform-origin:50% 100%}
 html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--kt-teal),var(--kt-violet),transparent);opacity:var(--kt-card-light,.3);box-shadow:0 0 18px rgba(141,226,232,.28)}
 @keyframes kt-grain{0%{transform:translate3d(-3%,-2%,0)}50%{transform:translate3d(3%,2%,0)}100%{transform:translate3d(-3%,-2%,0)}}
-@media(max-width:767px){.kt-machine-scene{inset:0;transform:scale(1.12)!important;background-position:center;will-change:opacity}.kt-machine-scene[data-scene="2"]{background-position:64% center}.kt-machine-scene[data-scene="3"]{background-position:66% center}.kt-machine-vignette{background:linear-gradient(180deg,rgba(4,10,16,.94),rgba(4,10,16,.58) 35%,rgba(4,10,16,.9))}.kt-machine-jamb,.kt-machine-rail,.kt-machine-status,.kt-machine-scan{display:none}html body .kt-tour-section::before{background:rgba(5,12,18,.79)!important}html body .kt-tour-section::after{height:78px}html body #what#what.kt-tour-section{padding-top:54px!important;padding-bottom:58px!important}html body .kt-tour-section :is(.kb-card,.receipt-card,.mapping-row,.receipt-scope,.kp-demo,.kp-path){backdrop-filter:none}html body #evidence#evidence .receipt-heading>div{padding:26px 22px!important;background:rgba(3,10,15,.7);backdrop-filter:none}html body #architecture .tier-content{display:flex!important;min-height:0!important}html body #architecture .tier-visual{display:none!important}html body #architecture .kt-tier-kicker{margin-bottom:12px}html body #architecture .tier-content>h3{font-size:34px!important}html body #architecture .tier-purpose{margin-top:16px!important}html body #architecture .kt-tier-facts{margin-top:24px}html body #architecture .tier-position{margin-top:28px!important}html body #architecture .kt-architecture-outro{padding:38px 22px}html body #evidence .alignment-heading{padding:26px 22px!important;backdrop-filter:none}}
+@media(max-width:767px){.kt-machine-scene{inset:0;transform:scale(1.12)!important;background-position:center;will-change:opacity}.kt-machine-scene[data-scene="2"]{background-position:64% center}.kt-machine-scene[data-scene="3"]{background-position:66% center}.kt-machine-vignette{background:linear-gradient(180deg,rgba(4,10,16,.94),rgba(4,10,16,.58) 35%,rgba(4,10,16,.9))}.kt-machine-jamb,.kt-machine-rail,.kt-machine-status,.kt-machine-scan{display:none}html body .kt-tour-section::before{background:rgba(5,12,18,.79)!important}html body .kt-tour-section::after{height:78px}html body #what#what.kt-tour-section{padding-top:54px!important;padding-bottom:58px!important}html body .kt-tour-section :is(.kb-card,.receipt-card,.mapping-row,.receipt-scope,.kp-demo,.kp-path){backdrop-filter:none}html body #evidence#evidence .receipt-heading>div{padding:26px 22px!important;background:rgba(3,10,15,.7);backdrop-filter:none}html body #evidence#evidence .receipt-grid.kt-receipt-carousel>.receipt-card{min-height:0!important;padding:28px 22px!important}html body #evidence#evidence .kt-receipt-controls{gap:10px}html body #evidence#evidence .kt-receipt-button{min-width:102px;padding:11px 16px}html body #architecture .tier-content{display:flex!important;min-height:0!important}html body #architecture .tier-visual{display:none!important}html body #architecture .kt-tier-kicker{margin-bottom:12px}html body #architecture .tier-content>h3{font-size:34px!important}html body #architecture .tier-purpose{margin-top:16px!important}html body #architecture .kt-tier-facts{margin-top:24px}html body #architecture .tier-position{margin-top:28px!important}html body #evidence .alignment-heading{padding:26px 22px!important;backdrop-filter:none}}
 @media(prefers-reduced-motion:reduce){.kt-machine-grain{animation:none!important}.kt-machine-scene{transform:scale(1.06)!important;will-change:auto}.kt-machine-scan,.kt-machine-jamb{transform:none!important}.kt-machine-rail span{transition:none!important}html body .kt-reveal,html body #soul .kb-card.kt-reveal{opacity:1!important;transform:none!important;will-change:auto}}
 @media print{.kt-machine-env{display:none!important}html body .kt-tour-section{background:#fff!important;color:#111!important}html body .kt-reveal{opacity:1!important;transform:none!important}}
 `;document.head.append(style)})();
@@ -139,14 +144,9 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
       purpose.after(facts);
       [...panel.querySelectorAll('*')].filter(element=>element.textContent.trim()==='One governed intelligence').forEach(element=>element.remove());
     });
-    const architectureClosing=document.querySelector('#architecture .architecture-closing');
-    const architectureSummary=document.querySelector('#architecture .architecture-summary');
-    if(architectureClosing&&architectureSummary&&!architectureClosing.parentElement?.classList.contains('kt-architecture-outro')){
-      const outro=document.createElement('div');
-      outro.className='kt-architecture-outro';
-      architectureClosing.before(outro);
-      outro.append(architectureClosing,architectureSummary);
-    }
+    document.querySelector('#architecture .architecture-closing')?.remove();
+    document.querySelector('#architecture .architecture-summary')?.remove();
+    document.querySelector('#architecture .verification-note')?.remove();
     ['strategic-licensing','the-ask'].forEach(id=>{
       const section=document.getElementById(id);
       if(!section)return;
@@ -169,16 +169,51 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
     }
     const thesisCopy=document.querySelector('#pitch-intro .kb-lead');
     if(thesisCopy)thesisCopy.textContent='As AI gains greater capability, autonomy, memory, tool access, and institutional responsibility, the infrastructure governing its execution must become equally capable. KrystBios brings permissions, memory, identity, oversight, and recovery into one runtime governance architecture.';
+    const whatSection=document.getElementById('what');
+    const whatLead=whatSection?.querySelector('.kb-lead');
+    if(whatLead)whatLead.textContent='KrystBios is a runtime governance layer that operates in the control plane above the LLM. It monitors activity, builds a traceable audit chain, and corrects outputs without modifying the model’s weights.';
+    const whatStatement=whatSection?.querySelector('.kb-statement');
+    if(whatStatement)whatStatement.textContent='That means more autonomy for AI, accountable oversight for the people responsible, and greater safety for us all.';
+    ['Illustrative audit record','Permission verified · Read allowed · Outcome recorded','Replay sequence'].forEach(text=>{
+      [...(whatSection?.querySelectorAll('*')||[])].filter(element=>element.children.length===0&&element.textContent.trim()===text).forEach(element=>element.remove());
+    });
+    const whatPanels=whatSection?.querySelectorAll('.kb-grid .kb-card');
+    if(whatPanels?.length){
+      const separation=whatPanels[whatPanels.length-1];
+      const heading=separation.querySelector('h3');
+      const paragraphs=separation.querySelectorAll('p');
+      const paragraph=paragraphs[0];
+      if(heading&&paragraph){
+        let authority=[...whatSection.querySelectorAll('.kb-statement')][1];
+        if(!authority){authority=document.createElement('p');authority.className='kb-quote';heading.after(authority)}
+        authority.textContent='Capability belongs to the model. Authority belongs to the control plane.';
+        if(authority.previousElementSibling!==heading)heading.after(authority);
+        paragraph.textContent='The LLM is the brain. It generates intelligence, reasoning, and proposed actions. KrystBios is the S.O.U.L. It governs whether those actions are authorized, records what happens, and intervenes when necessary. KrystBios makes governance model agnostic. It operates outside the model’s weights and does not depend on the model policing itself.';
+        [...paragraphs].slice(1).forEach(extra=>extra.remove());
+      }
+    }
     const soulTitle=document.querySelector('#soul h2');
-    if(soulTitle)soulTitle.textContent='What is the S.O.U.L of AI?';
+    if(soulTitle)soulTitle.textContent='What is the S.O.U.L of AI';
+    const soulSection=document.getElementById('soul');
+    const soulLead=soulSection?.querySelector('.kb-lead');
+    if(soulLead)soulLead.textContent='The S.O.U.L is a governed execution backbone. It unifies twelve connected tiers, each designed to address a distinct challenge in governing increasingly autonomous AI systems.';
+    const soulStatement=soulSection?.querySelector('.kb-statement');
+    if(soulStatement)soulStatement.textContent='The S.O.U.L keeps AI systems working as one coordinated organism, so it can retain context, stay focused on its goals, and adapt without losing oversight.';
     const architectureLabel=[...document.querySelectorAll('#architecture .section-label')].find(label=>label.textContent.trim()==='Architecture');
     if(architectureLabel)architectureLabel.remove();
     const alignment=document.querySelector('#evidence .alignment');
     const alignmentHeading=alignment?.querySelector('.alignment-heading');
     if(alignmentHeading){
-      alignmentHeading.querySelector('.section-label')?.remove();
+      const alignmentLabel=alignmentHeading.querySelector('.section-label');
+      if(alignmentLabel)alignmentLabel.textContent='NIST Aligned';
       const alignmentCopy=alignmentHeading.querySelector('.muted');
-      if(alignmentCopy)alignmentCopy.textContent='Documented evidence connects governance, risk assessment, testing, and response to technical implementation. This alignment shows how the architecture addresses AI risks already recognized by serious organizations. This gives organizations a familiar framework for evaluating how KrystBios governs AI risk.';
+      if(alignmentCopy){
+        alignmentCopy.textContent='Documented evidence connects governance, risk assessment, testing, and response to technical implementation.';
+        const context=document.createElement('p');
+        context.className='muted kt-alignment-context';
+        context.textContent='This alignment shows how the architecture addresses AI risks already recognized by serious organizations. This provides organizations a familiar framework for evaluating how KrystBios governs AI risk.';
+        alignmentCopy.after(context);
+      }
       [...alignment.children].forEach(child=>{if(child!==alignmentHeading&&!child.classList.contains('mapping'))child.remove()});
     }
     const difference=document.getElementById('the-difference');
@@ -189,12 +224,45 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
       if(inner&&title&&grid){
         [...inner.children].forEach(child=>{if(child!==title&&child!==grid)child.remove()});
         title.textContent='Critical Control AI Infrastructure.';
+        [...grid.children].find(card=>card.textContent.trim().startsWith('SaaS'))?.remove();
         const summary=document.createElement('p');
         summary.className='kt-difference-summary';
-        summary.textContent='KrystBios is a Runtime Governance Layer, positioned as Critical Control AI Infrastructure. SaaS describes how software is delivered. KrystBios’s positioning describes its role: governing AI while it operates. Most AI controls inspect one moment. KrystBios governs the full operating lifecycle, from startup verification and runtime decisions to enforcement, recovery, and evidence.';
+        summary.textContent='KrystBios is a Runtime Governance Layer, positioned as Critical Control AI Infrastructure. It governs AI while it operates. That means governing the full operating lifecycle, from startup verification and runtime decisions to enforcement, recovery, and evidence.';
         title.style.cssText='width:100%;max-width:none;margin:0 auto 36px;text-align:center';
         summary.style.cssText='width:100%;max-width:900px;margin:38px auto 0;color:#b8c2ca;font-size:18px;line-height:1.75;text-align:center;text-wrap:balance';
         grid.after(summary);
+      }
+    }
+    const architectureSection=document.getElementById('architecture');
+    const architectureSubtitle=architectureSection?.querySelector('.architecture-intro,.architecture-subtitle,.kb-lead');
+    if(architectureSubtitle)architectureSubtitle.textContent='Twelve tiers integrated into one coordinated system to govern AI as it operates.';
+    [...(architectureSection?.querySelectorAll('*')||[])].filter(element=>element.children.length===0&&element.textContent.trim()==='It establishes trust, perceives signals, stabilizes time, coordinates thought, navigates goals, manages recursion, preserves identity, diagnoses failure, governs memory, interprets law, enforces decisions, and restores itself.').forEach(element=>element.textContent='Twelve tiers integrated into one coordinated system to govern AI as it operates.');
+    const evidenceSection=document.getElementById('evidence');
+    [...(evidenceSection?.querySelectorAll('*')||[])].filter(element=>element.children.length===0&&['Start a private technical review conversation.','Client production deployment, including customer data and backend integration, is the next phase.'].includes(element.textContent.trim())).forEach(element=>element.remove());
+    if(evidenceSection){
+      const walker=document.createTreeWalker(evidenceSection,NodeFilter.SHOW_TEXT);
+      const textNodes=[];
+      while(walker.nextNode())textNodes.push(walker.currentNode);
+      textNodes.forEach(node=>{node.textContent=node.textContent.replace('Client production deployment, including customer data and backend integration, is the next phase.','')});
+    }
+    const receiptGrid=evidenceSection?.querySelector('.receipt-grid');
+    if(receiptGrid&&!receiptGrid.classList.contains('kt-receipt-carousel')){
+      const cards=[...receiptGrid.children].filter(card=>card.classList.contains('receipt-card'));
+      if(cards.length){
+        receiptGrid.classList.add('kt-receipt-carousel');
+        let activeReceipt=0;
+        const controls=document.createElement('div');
+        controls.className='kt-receipt-controls';
+        controls.innerHTML='<button class="kt-receipt-button" type="button" data-direction="-1" aria-label="Show previous receipt">Previous</button><span class="kt-receipt-count" aria-live="polite"></span><button class="kt-receipt-button" type="button" data-direction="1" aria-label="Show next receipt">Next</button>';
+        const count=controls.querySelector('.kt-receipt-count');
+        const showReceipt=index=>{
+          activeReceipt=(index+cards.length)%cards.length;
+          cards.forEach((card,cardIndex)=>{const active=cardIndex===activeReceipt;card.classList.toggle('kt-receipt-active',active);card.setAttribute('aria-hidden',String(!active))});
+          count.textContent=`${String(activeReceipt+1).padStart(2,'0')} / ${String(cards.length).padStart(2,'0')}`;
+        };
+        controls.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>showReceipt(activeReceipt+Number(button.dataset.direction))));
+        receiptGrid.after(controls);
+        showReceipt(0);
       }
     }
     sections.forEach(section=>{section.classList.add('kt-tour-section');if(section.parentElement?.classList.contains('section-band'))section.parentElement.classList.add('kt-section-band')});
