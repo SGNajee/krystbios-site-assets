@@ -100,9 +100,24 @@ html body #architecture .wf-panel-08 .memory-film-scene video{object-fit:contain
 html body #architecture .wf-panel-01 .dragon-film{transform:scale(.9)!important;transform-origin:right center!important}
 html body #architecture .wf-panel-04 .dragon-film{filter:brightness(1.4)!important}
 html body #architecture .wf-panel-04 .dragon-film-shade{display:none!important}
-html body #evidence .alignment-heading{position:relative;padding:36px!important;background:linear-gradient(145deg,rgba(18,31,40,.94),rgba(7,14,21,.97))!important;border:1px solid rgba(151,194,207,.42)!important;border-radius:18px!important;box-shadow:0 22px 70px rgba(0,0,0,.34)!important;backdrop-filter:blur(10px)}
-html body #evidence .alignment-heading h3{max-width:900px;margin-left:auto!important;margin-right:auto!important;color:var(--kt-ink)!important;text-shadow:0 2px 20px rgba(0,0,0,.5)}
-html body #evidence .alignment-heading .muted{max-width:900px;margin-left:auto!important;margin-right:auto!important;color:#d2dae0!important}
+html body #evidence .alignment{position:relative!important;display:block!important;min-height:940px;margin-top:110px!important;overflow:hidden;isolation:isolate}
+html body #evidence .alignment::before{content:'';position:absolute;inset:15% 19%;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(92,157,176,.16),rgba(198,169,223,.07) 42%,transparent 72%);filter:blur(18px)}
+html body #evidence .alignment-heading{position:absolute;left:50%;top:50%;z-index:3;width:min(700px,58vw);padding:42px!important;transform:translate(-50%,-50%);text-align:center;background:linear-gradient(145deg,rgba(18,31,40,.82),rgba(7,14,21,.92))!important;border:1px solid rgba(151,194,207,.42)!important;border-radius:22px!important;box-shadow:0 28px 90px rgba(0,0,0,.4)!important;backdrop-filter:blur(14px)}
+html body #evidence .alignment-heading .section-label{display:none!important}
+html body #evidence .alignment-heading h3{max-width:900px;margin:0 auto!important;color:var(--kt-ink)!important;font-size:clamp(38px,4.2vw,62px)!important;line-height:1.05!important;text-align:center!important;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+html body #evidence .alignment-heading .muted{max-width:620px;margin:24px auto 0!important;color:#d2dae0!important;font-size:17px!important;line-height:1.72!important;text-align:center!important}
+html body #evidence .alignment .mapping{position:absolute;inset:0;z-index:2;display:block!important;pointer-events:none}
+html body #evidence .alignment .mapping-row{position:absolute;width:min(360px,30vw);min-height:224px;margin:0!important;padding:28px!important;pointer-events:auto;background:linear-gradient(145deg,rgba(18,31,40,.9),rgba(7,14,21,.95))!important;border:1px solid rgba(151,194,207,.4)!important;border-radius:18px!important;box-shadow:0 24px 70px rgba(0,0,0,.34)!important;backdrop-filter:blur(10px);transform:translate3d(0,var(--kt-nist-y,0px),0) rotate(var(--kt-nist-r,0deg)) scale(var(--kt-nist-scale,1))!important;transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;will-change:transform}
+html body #evidence .alignment .mapping-row:hover{--kt-nist-scale:1.018;border-color:rgba(198,169,223,.64)!important;box-shadow:0 30px 90px rgba(0,0,0,.42)!important}
+html body #evidence .alignment .mapping-row:nth-child(1){left:1.5%;top:4%;--kt-nist-r:-1.6deg}
+html body #evidence .alignment .mapping-row:nth-child(2){right:1.5%;top:9%;--kt-nist-r:1.4deg}
+html body #evidence .alignment .mapping-row:nth-child(3){left:5%;bottom:5%;--kt-nist-r:1.2deg}
+html body #evidence .alignment .mapping-row:nth-child(4){right:4%;bottom:2%;--kt-nist-r:-1.3deg}
+html body #evidence .alignment .mapping-row h4{margin:0 0 18px!important;color:var(--kt-ink)!important;font-size:25px!important;line-height:1.15!important}
+html body #evidence .alignment .mapping-row ul{margin:0!important;padding-left:19px!important}
+html body #evidence .alignment .mapping-row li{margin:8px 0!important;color:#c7d0d6!important;font-size:14px!important;line-height:1.5!important}
+html body :is(.ev-ribbon,.kc-flow,.kp-soul-pause,.ev-motion,.kc-motion){display:none!important}
+html body #kb-contact#kb-contact.kt-tour-section::before,html body #kb-contact#kb-contact.kt-tour-section::after{display:none!important;background:none!important}
 html body .kt-reveal{opacity:var(--kt-reveal,0)!important;transform:translate3d(0,var(--kt-reveal-y,34px),0)!important;will-change:transform,opacity}
 html body .kt-reveal.kt-readable{will-change:auto}
 html body #soul .kb-grid{perspective:1200px}
@@ -110,7 +125,9 @@ html body #soul .kb-card.kt-reveal{transform:translate3d(0,var(--kt-reveal-y,34p
 html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24px;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--kt-teal),var(--kt-violet),transparent);opacity:var(--kt-card-light,.3);box-shadow:0 0 18px rgba(141,226,232,.28)}
 @keyframes kt-grain{0%{transform:translate3d(-3%,-2%,0)}50%{transform:translate3d(3%,2%,0)}100%{transform:translate3d(-3%,-2%,0)}}
 @media(max-width:767px){.kt-machine-scene{inset:0;transform:scale(1.12)!important;background-position:center;will-change:opacity}.kt-machine-scene[data-scene="2"]{background-position:64% center}.kt-machine-scene[data-scene="3"]{background-position:66% center}.kt-machine-vignette{background:linear-gradient(180deg,rgba(4,10,16,.94),rgba(4,10,16,.58) 35%,rgba(4,10,16,.9))}.kt-machine-jamb,.kt-machine-rail,.kt-machine-status,.kt-machine-scan{display:none}html body .kt-tour-section::before{background:rgba(5,12,18,.79)!important}html body .kt-tour-section::after{height:78px}html body #what#what.kt-tour-section{padding-top:54px!important;padding-bottom:58px!important}html body #what#what .kb-grid>.kb-card{padding:26px!important}html body #the-difference#the-difference .kb-grid{grid-template-columns:1fr!important}html body .kt-tour-section :is(.kb-card,.receipt-card,.mapping-row,.receipt-scope,.kp-demo,.kp-path){backdrop-filter:none}html body #evidence#evidence .receipt-heading>div{padding:26px 22px!important;background:rgba(3,10,15,.7);backdrop-filter:none}html body #evidence#evidence .receipt-grid.kt-receipt-carousel>.receipt-card{min-height:0!important;padding:28px 22px!important}html body #evidence#evidence .kt-receipt-controls{gap:10px}html body #evidence#evidence .kt-receipt-button{min-width:102px;padding:11px 16px}html body #architecture .tier-content{display:flex!important;min-height:0!important}html body #architecture .tier-visual{display:none!important}html body #architecture .kt-tier-kicker{margin-bottom:12px}html body #architecture .tier-content>h3{font-size:34px!important}html body #architecture .tier-purpose{margin-top:16px!important}html body #architecture .kt-tier-facts{margin-top:24px}html body #architecture .tier-position{margin-top:28px!important}html body #evidence .alignment-heading{padding:26px 22px!important;backdrop-filter:none}}
-@media(prefers-reduced-motion:reduce){.kt-machine-grain{animation:none!important}.kt-machine-scene{transform:scale(1.06)!important;will-change:auto}.kt-machine-scan,.kt-machine-jamb{transform:none!important}.kt-machine-rail span{transition:none!important}html body .kt-reveal,html body #soul .kb-card.kt-reveal{opacity:1!important;transform:none!important;will-change:auto}}
+@media(max-width:991px){html body #evidence .alignment{display:flex!important;min-height:0!important;flex-direction:column;margin-top:76px!important;overflow:visible}html body #evidence .alignment::before{inset:10% 0}html body #evidence .alignment-heading{position:relative;left:auto;top:auto;width:100%;padding:34px 28px!important;transform:none}html body #evidence .alignment .mapping{position:relative;inset:auto;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important;margin-top:22px}html body #evidence .alignment .mapping-row{position:relative;inset:auto!important;width:auto;min-height:0;transform:none!important;will-change:auto}}
+@media(max-width:767px){html body #evidence .alignment-heading{padding:30px 22px!important}html body #evidence .alignment-heading h3{font-size:38px!important}html body #evidence .alignment-heading .muted{font-size:16px!important}html body #evidence .alignment .mapping{grid-template-columns:1fr!important}html body #evidence .alignment .mapping-row{padding:25px!important}}
+@media(prefers-reduced-motion:reduce){.kt-machine-grain{animation:none!important}.kt-machine-scene{transform:scale(1.06)!important;will-change:auto}.kt-machine-scan,.kt-machine-jamb{transform:none!important}.kt-machine-rail span{transition:none!important}html body .kt-reveal,html body #soul .kb-card.kt-reveal{opacity:1!important;transform:none!important;will-change:auto}html body #evidence .alignment .mapping-row{transform:rotate(var(--kt-nist-r,0deg))!important;will-change:auto}}
 @media print{.kt-machine-env{display:none!important}html body .kt-tour-section{background:#fff!important;color:#111!important}html body .kt-reveal{opacity:1!important;transform:none!important}}
 `;document.head.append(style)})();
 
@@ -212,15 +229,14 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
     const alignmentHeading=alignment?.querySelector('.alignment-heading');
     if(alignmentHeading){
       const alignmentLabel=alignmentHeading.querySelector('.section-label');
-      if(alignmentLabel)alignmentLabel.textContent='NIST Aligned';
+      if(alignmentLabel)alignmentLabel.remove();
+      const alignmentTitle=alignmentHeading.querySelector('h3');
+      if(alignmentTitle)alignmentTitle.textContent='NIST Alignment';
       const alignmentCopy=alignmentHeading.querySelector('.muted');
       if(alignmentCopy){
-        alignmentCopy.textContent='Documented evidence connects governance, risk assessment, testing, and response to technical implementation.';
-        const context=document.createElement('p');
-        context.className='muted kt-alignment-context';
-        context.textContent='This alignment shows how the architecture addresses AI risks already recognized by serious organizations. This provides organizations a familiar framework for evaluating how KrystBios governs AI risk.';
-        alignmentCopy.after(context);
+        alignmentCopy.textContent='KrystBios addresses 14 categories of the NIST AI Risk Management Framework. Documented evidence maps governance, risk assessment, testing, and response directly to technical implementation. This alignment provides organizations with a familiar, established framework for understanding how KrystBios translates recognized AI risks into enforceable runtime controls.';
       }
+      alignmentHeading.querySelectorAll('.kt-alignment-context').forEach(element=>element.remove());
       [...alignment.children].forEach(child=>{if(child!==alignmentHeading&&!child.classList.contains('mapping'))child.remove()});
     }
     const difference=document.getElementById('the-difference');
@@ -272,6 +288,13 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
         showReceipt(0);
       }
     }
+    const purgeLegacyBackgrounds=()=>{
+      document.querySelectorAll('#soul,#evidence,#kb-contact').forEach(section=>section.classList.add('ev-paused','kc-paused'));
+      document.querySelectorAll('.kp-soul-pause,.ev-motion,.kc-motion,.ev-ribbon,.kc-flow').forEach(element=>element.remove());
+      document.querySelectorAll('#evidence video,#kb-contact video').forEach(video=>{video.pause();video.removeAttribute('autoplay');video.removeAttribute('loop');video.remove()});
+    };
+    purgeLegacyBackgrounds();
+    new MutationObserver(purgeLegacyBackgrounds).observe(document.body,{childList:true,subtree:true});
     sections.forEach(section=>{section.classList.add('kt-tour-section');if(section.parentElement?.classList.contains('section-band'))section.parentElement.classList.add('kt-section-band')});
     const environment=document.createElement('div');
     environment.className='kt-machine-env';
@@ -306,6 +329,8 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
     const mobile=matchMedia('(max-width:767px)');
     const clamp=value=>Math.max(0,Math.min(1,value));
     const smooth=value=>value*value*(3-2*value);
+    const nistAlignment=document.querySelector('#evidence .alignment');
+    const nistCards=[...(nistAlignment?.querySelectorAll('.mapping-row')||[])];
     let frame=0,lookX=0,lookY=0,positions=[];
     function measure(){positions=beats.map(beat=>beat.element.getBoundingClientRect().top+scrollY)}
     function paint(){
@@ -335,6 +360,13 @@ html body #soul .kb-card::before{content:'';position:absolute;left:24px;right:24
       environment.style.setProperty('--kt-door',(journey*82).toFixed(2));
       environment.style.setProperty('--kt-scan-y',(journey*viewport*.68).toFixed(2)+'px');
       environment.style.setProperty('--kt-scan-opacity',activeScene<0?'0':'.36');
+      if(nistAlignment&&nistCards.length){
+        const nistBox=nistAlignment.getBoundingClientRect();
+        const nistProgress=clamp((viewport-nistBox.top)/Math.max(1,viewport+nistBox.height));
+        const nistOffset=(nistProgress-.5)*92;
+        const nistDepth=[-.34,.28,.24,-.3];
+        nistCards.forEach((card,index)=>card.style.setProperty('--kt-nist-y',(reduced.matches||innerWidth<=991?0:nistOffset*nistDepth[index]).toFixed(2)+'px'));
+      }
       revealTargets.forEach(target=>{
         const box=target.element.getBoundingClientRect();
         const delay=mobile.matches?0:target.delay*viewport*.018;
